@@ -1,9 +1,11 @@
 import { guideService } from '../GuideService';
-import { publicProcedure } from '../trpc';
+import { publicProcedure, router } from '../trpc';
 
-const ecCenter = publicProcedure.query(async () => {
-  const guide = await guideService.guide.userGuide();
-  return guide;
+const ecCenterRoute = router({
+  guide: publicProcedure.query(() => {
+    const guide = guideService.guide.userGuide();
+    return guide;
+  }),
 });
 
-export default ecCenter;
+export default ecCenterRoute;

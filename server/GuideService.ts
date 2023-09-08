@@ -30,6 +30,6 @@ const guide: Guide = {
 
 export const guideService = {
   guide: {
-    userGuide: async () => guide,
+    userGuide: () => guide,
   },
 };

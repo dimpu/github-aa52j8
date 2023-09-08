@@ -1,1 +1,1 @@
-export { default as ecCenter } from './ec-center';
+export { default as ecCenterRoute } from './ec-center';

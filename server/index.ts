@@ -1,10 +1,13 @@
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
-import { router } from './trpc';
-import { ecCenter } from './routers';
+import { publicProcedure, router } from './trpc';
 import cors from 'cors';
+import { guideService } from './GuideService';
 
 const appRouter = router({
-  ecCenter,
+  ecCenter: publicProcedure.query(() => {
+    const guide = guideService.guide.userGuide();
+    return guide;
+  }),
 });
 
 // Export type router type signature,

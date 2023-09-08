@@ -11,8 +11,7 @@ const trpc = createTRPCProxyClient<AppRouter>({
 });
 
 async function main() {
-  const guide = await trpc.ecCenter.query();
-  const guide2 = await trpc.ecCenter.query();
+  const guide = await trpc.userList.
 
   console.log('guide:', guide);
 }
